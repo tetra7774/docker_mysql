@@ -1,0 +1,20 @@
+[mysqld]
+character-set-server = utf8mb4
+collation-server = utf8mb4_general_ci
+pid-file	= /var/run/mysqld/mysqld.pid
+socket		= /var/run/mysqld/mysqld.sock
+datadir		= /var/lib/mysql
+#log-error	= /var/log/mysql/error.log
+# By default we only accept connections from localhost
+#bind-address	= 127.0.0.1
+# Disabling symbolic-links is recommended to prevent assorted security risks
+symbolic-links=0
+#↓slaveで受け取ったバイナリファイルはrelaylogとして受け取る。ここはrelaylogファイル名を設定
+relay-log=mysqld-relay-bin 
+relay-log-index=mysqld-relay-bin 
+# ↓レプリケーションにはバイナリファイルが必要。ここはバイナリファイル出力されるパスを記載する。
+# masterで出力されたログがslaveに連携されて同期する際の元ネタになる。
+log-bin=/var/log/mysql/mysql-bin.log
+
+#master/slave構成を取るにはServer-idの設定も必要。これはStack内でmysqlサーバを一意に識別するため。スクリプトで自動で設定ファルに追記されるようにする。
+
