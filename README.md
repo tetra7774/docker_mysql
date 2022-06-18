@@ -7,7 +7,7 @@ dockerでMaster&SlaveのDBを構築するための備忘録的な
 URL:https://github.com/tetra7774/docker_mysql.git
 
 ## 構成概要
-<img width="588" alt="image" src="https://user-images.githubusercontent.com/103823940/169683615-71079ad8-1088-4444-97ac-a092766cbf00.png">
+<img width="615" alt="スクリーンショット 2022-06-18 15 11 05" src="https://user-images.githubusercontent.com/103823940/174425414-dc6fcaef-9f58-45f9-888f-4a1821e9abac.png">
 
 ## Requirement
 動作確認した環境  
@@ -16,6 +16,10 @@ URL:https://github.com/tetra7774/docker_mysql.git
 - Mysql 5.7
 
 ## Usage(実行コマンドやTipsなど)
+### 実行コマンド  
+#### 下準備
+
+
 
 ###　mysqlでconfファイルに設定する環境変数はこちらのサイトが参考になりそう。
 - [基礎MySQL ~その２~ my.cnf (設定ファイル)](https://qiita.com/yoheiW@github/items/bcbcd11e89bfc7d7f3ff)
