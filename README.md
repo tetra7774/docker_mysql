@@ -37,7 +37,7 @@ URL:https://github.com/tetra7774/docker_mysql.git
 5. 「4.」でDB(Master)にアクセスしたのでinit-data.shを実行してテーブルとデータを作成。  
 ```init-data.sh```
 6. テーブルの確認
-```mysql -u gihyo -pgihyo tododb```
+```mysql -u gihyo -pgihyo tododb```  
 ```SELECT * FROM todo LIMIT 1\G```
 ※LIMITオプション：レコード何行分表示するか
 ※\G：SQL文の末尾に\Gを付けると縦に表示されてちょっと見やすくなる(;の代わりに入力)  
