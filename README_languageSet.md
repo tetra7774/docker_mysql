@@ -60,7 +60,32 @@ show variables like "chara%";
 [このサイト](https://qiita.com/kazuyoshikakihara/items/0cf74c11d273b0064c83)
 の後半部分を使って用意する必要がありそう。  
 用意されていれば、Dockerfileに「ENV LANG ja_JP.UTF-8」を追加すれば大丈夫なのかな。。  
-→今度試してみる。  
+ ~~ →今度試してみる。 ~~  試してみた。
+
+ ## imageへの記載方法（docker）
+ 参考にしたのは
+ [このサイト](https://qiita.com/n_oshiumi/items/cfe91c60730f602b38eb)  
+ どうやら、Debian系とCentOSではやり方が違うみたい。今回はDebian系。  
+   
+実際に自分で試してみたコードは下記の通り
+```
+#コンテナの日本語設定
+RUN apt-get update && apt-get install -y locales locales-all 
+# RUN locale-gen ja_JP.UTF-8
+ENV LANG ja_JP.UTF-8
+```
+
+localeコマンドとは？  
+「locale」は現在のロケールと使用可能なロケールの情報を表示するコマンド。  
+locales-allとは？  
+コンパイル済みのロケールデータが含まれる。(なぜかこれもInstallしないとコンテナ上でうまくいかなかった。とりあえず入れておく。)  
+コンテナ上はLANGの環境変数をexportしておくことで、言語設定できる。Terminal上で直接言語設定をするときは下記のように実行するが、今回はDockerファイルのお作法に合わせた。  
+```
+export LANG=ja_JP.UTF-8
+```
+
+  
+
 
 
 以上。
